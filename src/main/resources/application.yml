@@ -1,20 +1,17 @@
-
 spring:
   application:
     name: payment
   datasource:
-    url: jdbc:mysql://localhost:3306/payments
-    username: root
-    password: victoruk11
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
 
-
-# application.yml
 flutterwave:
-  secret-key: FLWSECK_TEST-8f93edfa5a06dea5d5cf078859bca663-X
-  public-key: FLWPUBK_TEST-e7b8da20dda5198b3de2e2ac7076afde-X
-  base-url: https://api.flutterwave.com/v3
+  secret-key: ${FLUTTERWAVE_SECRET_KEY}
+  public-key: ${FLUTTERWAVE_PUBLIC_KEY}
+  base-url: ${FLUTTERWAVE_BASE_URL}
